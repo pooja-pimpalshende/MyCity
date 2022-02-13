@@ -8,6 +8,7 @@ import LibraryComponent from "./components/library/library";
 import CoachingComponent from "./components/coaching/coaching";
 import StationaryComponent from "./components/stationary/stationary";
 import ScholarshipComponent from "./components/scholarship/scholarship";
+import LoginComponent from "./components/login/login";
 
 function App() {
   return (
@@ -15,16 +16,27 @@ function App() {
       <Router>
         <div className="header">
           Welcome to mycity
+
+
+            
+
+
+
+
+
+
+
+
+
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/college">College</Link></li>
             <li><Link to="/hostel">Hostel</Link></li>
             <li><Link to="/library">Library</Link></li>
             <li><Link to="/coaching">Coaching</Link></li>
             <li><Link to="/stationary">Stationary</Link></li>
             <li><Link to="/scholarship">Scholarship</Link></li>
+            <li><Link to="/login">Login</Link></li>
           </ul>
         </div>
         <Routes>
@@ -35,6 +47,7 @@ function App() {
           <Route path="/coaching" element={<CoachingComponent />} />
           <Route path="/stationary" element={<StationaryComponent />} />
           <Route path="/scholarship" element={<ScholarshipComponent />} />
+          <Route path="/login" element={<LoginComponent />} />
         </Routes>
       </Router>
     </div>
