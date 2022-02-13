@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function LibraryComponent() {
-    return (
-      <div>
-        This is Library page
-      </div>
-    );
-  }
+  return <div>This is Library page</div>;
+}
 
-  export default LibraryComponent
+export default LibraryComponent;

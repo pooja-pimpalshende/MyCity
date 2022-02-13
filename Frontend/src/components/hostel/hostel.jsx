@@ -1,12 +1,8 @@
 import React from "react";
-import './hostel.css'
+import "./hostel.css";
 
 function HostelComponent() {
-    return (
-      <div>
-        This is Hostel page
-      </div>
-    );
-  }
+  return <div>This is Hostel page</div>;
+}
 
-  export default HostelComponent
+export default HostelComponent;
