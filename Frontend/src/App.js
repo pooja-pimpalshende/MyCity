@@ -9,6 +9,7 @@ import CoachingComponent from "./components/coaching/coaching";
 import StationaryComponent from "./components/stationary/stationary";
 import ScholarshipComponent from "./components/scholarship/scholarship";
 import LoginComponent from "./components/login/login";
+import SignUpComponent from "./components/signup/signup";
 
 function App() {
   return (
@@ -16,11 +17,12 @@ function App() {
       <Router>
         <div className="container-fluid">
           <div className="row sticky-top">
-            <div className="col-md-3 ">
-              <div className="row col" id="image">
-                <img src="http://picsum.photos/450/150" alt="" />
-              </div>
-            </div>
+            <img
+              className=" col-md-3"
+              id="image"
+              src="http://picsum.photos/450/150"
+              alt=""
+            />
             <div className="col-md-6 d-flex justify-content-center align-items-center ">
               <div className="row  ">
                 <h1 className="d-flex justify-content-start" id="mycity">
@@ -41,7 +43,9 @@ function App() {
                 </h4>
                 <h4>/</h4>
                 <h4>
-                  <a href="signup"> sign-up</a>
+                  <a href="signup">
+                    <Link to="/signup">sign-up</Link>
+                  </a>
                 </h4>
               </div>
             </div>
@@ -82,6 +86,7 @@ function App() {
             <Route path="/stationary" element={<StationaryComponent />} />
             <Route path="/scholarship" element={<ScholarshipComponent />} />
             <Route path="/login" element={<LoginComponent />} />
+            <Route path="/signup" element={<SignUpComponent />} />
           </Routes>
         </div>
       </Router>
