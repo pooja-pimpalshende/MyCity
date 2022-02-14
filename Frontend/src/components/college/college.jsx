@@ -1,12 +1,8 @@
 import React from "react";
-import './college.css'
+import "./college.css";
 
 function CollegeComponent() {
-    return (
-      <div>
-        This is college page
-      </div>
-    );
-  }
+  return <div>This is college page</div>;
+}
 
-  export default CollegeComponent
+export default CollegeComponent;

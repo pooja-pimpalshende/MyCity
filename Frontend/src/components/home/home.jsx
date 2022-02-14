@@ -11,4 +11,4 @@ function HomeComponent() {
         </div>);
   }
 
-  export default HomeComponent
+export default HomeComponent;

@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+#mycity{
+  font-style: italic;
+  text-decoration: underline;
+
+}
+#image{
+  padding-bottom: 10px;
+}
+
+button{
+  width: 160px;
+  height: 50px;
+}

@@ -1,0 +1,17 @@
+#image{
+    object-fit: cover;
+    width: 350px;
+    height: 200px;
+}
+#row{
+    height: 100px;
+}
+
+#mycity{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+   
+}

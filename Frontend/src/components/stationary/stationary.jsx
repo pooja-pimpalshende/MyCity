@@ -1,12 +1,8 @@
-import React from 'react'
-import './stationary.css'
+import React from "react";
+import "./stationary.css";
 
 function StationaryComponent() {
-    return (
-      <div>
-        This is Stationary page
-      </div>
-    );
-  }
+  return <div>this is stationary page</div>;
+}
 
-  export default StationaryComponent
+export default StationaryComponent;
