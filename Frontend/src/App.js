@@ -11,6 +11,7 @@ import ScholarshipComponent from "./components/scholarship/scholarship";
 import LoginComponent from "./components/login/login";
 import SignUpComponent from "./components/signup/signup";
 
+
 function App() {
   return (
     <div className="App">
