@@ -12,6 +12,7 @@ import LoginComponent from "./components/login/login";
 import SignUpComponent from "./components/signup/signup";
 import FormComponent from "./components/form/form";
 
+
 function App() {
   return (
     <div className="App fixed-top">
