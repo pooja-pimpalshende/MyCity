@@ -14,6 +14,7 @@ function SignUpComponent() {
             Username:
           </label>
           <input
+            id="username"
             type="text"
             name="username"
             placeholder="Enter your username"
@@ -26,23 +27,36 @@ function SignUpComponent() {
           <label htmlFor="email" className="form-label">
             Email:
           </label>
-          <input type="text" name="email" placeholder="Enter your email" />
+          <input 
+          id="email"
+          type="text" 
+          name="email" 
+          placeholder="Enter your email" 
+          value={values.email}
+          onChange={handleChange}
+          />
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="phone" className="form-label">
             Phone:
           </label>
           <input
+            id="phone"
             type="text"
             name="phone"
             placeholder="Enter your mobile number"
+            value={values.phone}
+            onChange={handleChange}
           />
+          {errors.phone && <p>{errors.phone}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password" className="form-label">
             Password:
           </label>
           <input
+            id="password"
             type="password"
             name="password1"
             placeholder="Enter your password"
@@ -56,6 +70,7 @@ function SignUpComponent() {
             Confirm Password:
           </label>
           <input
+            id="password2"
             type="password"
             name="password2"
             placeholder="Confirm Password"
