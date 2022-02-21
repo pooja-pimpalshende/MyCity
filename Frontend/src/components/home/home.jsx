@@ -1,8 +1,9 @@
 import React from "react";
 import "./home.css";
+import "./homeinfo.jsx";
 
 function HomeComponent() {
-  return <div>This is Home </div>;
+  return <a href="/homeinfo">add info about college</a>;
 }
 
 export default HomeComponent;
