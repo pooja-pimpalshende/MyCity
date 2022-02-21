@@ -1,5 +1,5 @@
-import React from 'react'
-import './coaching.css'
+import React from "react"
+import "./coaching.css"
 import coaching1 from "../../assets/images/coaching1.jpg";
 import coaching2 from "../../assets/images/coaching2.jpg";
 import coaching3 from "../../assets/images/coaching3.jpg";

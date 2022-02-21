@@ -1,6 +1,6 @@
-import React from 'react'
-import './stationary.css'
-import stationary1 from '../../assets/images/stationary1.jpeg';
+import React from "react"
+import "./stationary.css"
+import stationary1 from "../../assets/images/stationary1.jpeg";
 import stationary2 from "../../assets/images/stationary2.jpg";
 import stationary3 from "../../assets/images/stationary3.jpg";
 
