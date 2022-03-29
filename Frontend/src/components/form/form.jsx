@@ -1,260 +1,236 @@
-import React from "react";
-const emailState = { email: "", error: "" };
+import axios from "axios";
 
-class FormComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = emailState;
-    this.onChange = this.onChange.bind(this);
-  }
-  onChange(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
-  emailValidation() {
-    const regex =
-      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if (!this.state.email || regex.test(this.state.email) === false) {
-      this.setState({
-        error: "Email is not valid",
-      });
-      return false;
-    }
-    return true;
-  }
-  onSubmit() {
-    if (this.emailValidation()) {
-      console.log(this.state);
-      this.setState(emailState);
-    }
-  }
+import { useEffect, useState } from "react";
 
-  render() {
-    return (
-      <div>
-        {/* form for add business */}
-        <form className="row g-3 needs-validation" novalidate>
-          {/* Lable for Name of Organisation */}
-          <div className="col-md-4">
-            <label for="validationCustom01" className="form-label">
-              Name of Organisation
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom01"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid Organisation name.
-            </div>
-          </div>
-
-          {/* Lable for Contact No. */}
-          <div className="col-md-4">
-            <label for="validationCustom02" className="form-label">
-              Phone/Mobile No.
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom02"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid Phone/Mobile No.
-            </div>
-          </div>
-
-          {/* Lable for E-mail */}
-          <div className="col-md-4">
-            <label for="validationCustom03" className="form-label">
-              E-mail Id
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={this.state.email}
-              onChange={this.onChange}
-              className="form-control"
-            />
-            <span className="text-danger">{this.state.error}</span>
-          </div>
-
-          {/* Lable for House No./Plot No. */}
-          <div className="col-md-4">
-            <label for="validationCustom04" className="form-label">
-              House No./Plot No.
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom04"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid House No./Plot No..
-            </div>
-          </div>
-
-          {/* Lable for Street name  */}
-          <div className="col-md-4">
-            <label for="validationCustom05" className="form-label">
-              Street name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom05"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid street name.
-            </div>
-          </div>
-
-          {/* Lable for Name of City  */}
-          <div className="col-md-4">
-            <label for="validationCustom06" className="form-label">
-              City
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom06"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">Please provide a valid city.</div>
-          </div>
-
-          {/* Lable for Name of District  */}
-          <div className="col-md-4">
-            <label for="validationCustom07" className="form-label">
-              District
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom07"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid district.
-            </div>
-          </div>
-
-          {/* Lable for Name of State */}
-          <div className="col-md-4">
-            <label for="validationCustom08" className="form-label">
-              State
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom08"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid State.
-            </div>
-          </div>
-
-          {/* Lable for Name of Country */}
-          <div className="col-md-4">
-            <label for="validationCustom09" className="form-label">
-              Country
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom09"
-              value="India"
-              required
-            />
-          </div>
-
-          {/* Lable for Pincode */}
-          <div className="col-md-3">
-            <label for="validationCustom10" className="form-label">
-              Pincode
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustom10"
-              required
-            />
-            <div className="valid-feedback">Looks good!</div>
-            <div className="invalid-feedback">
-              Please provide a valid pincode.
-            </div>
-          </div>
-
-          {/* Lable for Confirmation */}
-          <div className="col-12">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id="invalidCheck"
-                required
-              />
-              <label className="form-check-label" for="invalidCheck">
-                Please confirm you have filled all details carefully.
-              </label>
-              <div className="invalid-feedback">
-                You must agree before submitting.
-              </div>
-            </div>
-          </div>
-
-          {/* submit button */}
-          <div className="col-12">
-            <button
-              className="btn btn-primary"
-              type="submit"
-              onClick={() => this.onSubmit()}
-            >
-              Submit form
-            </button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <>
+      <MyComponent />
+    </>
+  );
 }
 
-export default FormComponent;
+function MyComponent() {
+  const [college_name, setCollege_name] = useState("");
+  const [phone_no, setPhone_no] = useState("");
+  // const [email_id, setEmail_id] = useState("");
+  // const [house_no, setHouse_no] = useState("");
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  "use strict";
+  const [district, setDistrict] = useState("");
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll(".needs-validation");
+  const [state, setState] = useState("");
+  const [pincode, setPincode] = useState("");
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms).forEach(function (form) {
-    form.addEventListener(
-      "submit",
-      function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+  const [list, setList] = useState([]);
 
-        form.classNameList.add("was-validated");
+  const handleCollege_nameChange = (e) => {
+    setCollege_name(e.target.value);
+  };
+  const handlePhone_noChange = (e) => {
+    setPhone_no(e.target.value);
+  };
+  // const handleEmail_idChange = (e) => {
+  //   setEmail_id(e.target.value);
+  // };
+  // const handleHouse_noChange = (e) => {
+  //   setHouse_no(e.target.value);
+  // };
+
+  const handleStreetChange = (e) => {
+    setStreet(e.target.value);
+  };
+  const handleCityChange = (e) => {
+    setCity(e.target.value);
+  };
+  const handleDistrictChange = (e) => {
+    setDistrict(e.target.value);
+  };
+  const handleStateChange = (e) => {
+    setState(e.target.value);
+  };
+
+  const handlePincodeChange = (e) => {
+    setPincode(e.target.value);
+  };
+
+  const addUser = async () => {
+    // const url = "http://localhost:9090/colleges";
+    const data = {
+      college_name: college_name,
+      phone_no: phone_no,
+      // email_id: email_id,
+      // house_no: house_no,
+      street: street,
+      city: city,
+      district: district,
+      state: state,
+      pincode: pincode,
+    };
+
+    // AJAX using AXIOS
+    const result1 = axios({
+      method: "post",
+      url: "http://localhost:9090/colleges",
+      data: data,
+      headers: { "Content-Type": undefined }, //this is very important to send the data make sure cors is enabled.
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+
+    const newList = [data, ...list];
+    setList(newList);
+
+    setCollege_name("");
+    setPhone_no("");
+    // setEmail_id("");
+    // setHouse_no("");
+    setStreet("");
+    setCity("");
+    setDistrict("");
+    setState("");
+    setPincode("");
+  };
+
+  const getUser1 = async () => {
+    const url = "http://localhost:9090/colleges";
+    const result = await axios.get(url);
+
+    const list = result.data;
+    const newList = [...list];
+    setList(newList);
+  };
+
+  const getUser = async () => {
+    const url = "http://localhost:9090/colleges";
+    const result = axios.get(url).then(
+      (response) => {
+        console.log(response);
       },
-      false
+      (error) => {
+        console.log(error);
+      }
     );
-  });
-})();
+
+    const list = await result.json();
+
+    const newList = [...list];
+    setList(newList);
+  };
+
+  // Spe Function::  Like Constructor :: React Hooks
+  useEffect(() => getUser(), []);
+
+  return (
+    <div className="container-fluid">
+      <h1>User Registration</h1>
+      <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={college_name}
+          onChange={handleCollege_nameChange}
+          placeholder="Enter college name"
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          name=""
+          id=""
+          value={phone_no}
+          onChange={handlePhone_noChange}
+          placeholder="Enter phone number"
+        />
+      </div>
+      {/* <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={email_id}
+          onChange={handleEmail_idChange}
+          placeholder="Enter email id"
+        />
+      </div>{" "} */}
+      {/* <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={house_no}
+          onChange={handleHouse_noChange}
+          placeholder="Enter house number"
+        />
+      </div> */}
+      <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={street}
+          onChange={handleStreetChange}
+          placeholder="Enter street"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={district}
+          onChange={handleDistrictChange}
+          placeholder="Enter District"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={city}
+          onChange={handleCityChange}
+          placeholder="Enter City"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name=""
+          id=""
+          value={state}
+          onChange={handleStateChange}
+          placeholder="Enter State"
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          name=""
+          id=""
+          value={pincode}
+          onChange={handlePincodeChange}
+          placeholder="Enter Pincode"
+        />
+      </div>
+      <div>
+        <input type="button" name="" value="Register" onClick={addUser} />
+        <input type="button" name="" value="Get User" onClick={getUser} />
+      </div>
+      <h1>User List</h1>
+      {list.map((item, index) => (
+        <div key={index}>
+          {item.college_name} {item.phone_no}
+        </div>
+      ))}
+    </div>
+  );
+}

@@ -86,7 +86,7 @@ function App() {
         </div>
 
         <Routes>
-          // <Route path="/" element={<HomeComponent />} />
+          <Route path="/" element={<HomeComponent />} />
           <Route path="/college" element={<CollegeComponent />} />
           <Route path="/hostel" element={<HostelComponent />} />
           <Route path="/library" element={<LibraryComponent />} />

@@ -1,20 +1,20 @@
 import React from "react";
 import "./library.css";
-import library1 from "../../assets/images/library1.jpg";
-import library2 from "../../assets/images/library2.jpg";
-import library3 from "../../assets/images/library3.jpg";
-import library4 from "../../assets/images/library4.jpg";
 import Button from "react-bootstrap/Button";
 
 function LibraryComponent() {
   return (
     <div className="container-library">
       <div className="left">
-      <div>
-      <button type="button" class="btn btn-secondary">Public Library</button>
-        
-        <button type="button" class="btn btn-secondary">Government Library</button>
-      </div>
+        <div>
+          <button type="button" class="btn btn-secondary">
+            Public Library
+          </button>
+
+          <button type="button" class="btn btn-secondary">
+            Government Library
+          </button>
+        </div>
       </div>
       <div className="right">
         <div className="searchBy">
@@ -49,7 +49,7 @@ function LibraryComponent() {
         <div className="libraryBox">
           <div className="library-info">
             <div>
-              <img src={library1} />
+              <img src="http://picsum.photos/450/150" />
             </div>
 
             <div>
@@ -60,7 +60,7 @@ function LibraryComponent() {
             </div>
             <div>
               <button type="button" class="btn btn-success">
-              Enquire Now
+                Enquire Now
               </button>
             </div>
           </div>
