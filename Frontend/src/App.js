@@ -5,7 +5,8 @@ import HomeComponent from "./components/home/home";
 import CollegeComponent from "./components/college/college";
 import PrivateHostelComponent from "./components/hostel/hostel";
 import GovernmentHostelComponent from "./components/hostel/government";
-import LibraryComponent from "./components/library/library";
+import PrivateLibraryComponent from "./components/library/library";
+import GovernmentLibraryComponent from "./components/library/government";
 import CoachingComponent from "./components/coaching/coaching";
 import StationaryComponent from "./components/stationary/stationary";
 import ScholarshipComponent from "./components/scholarship/scholarship";
@@ -15,7 +16,7 @@ import FormComponent from "./components/form/form";
 
 function App() {
   return (
-    <div className="App fixed-top">
+    <div className="App">
       <Router>
         <div className="container-fluid sticky-top ">
           <div className="row sticky-top ">
@@ -68,7 +69,7 @@ function App() {
                 <Link to="/private-hostel">Hostel</Link>
               </button>
               <button>
-                <Link to="/library">Library</Link>
+                <Link to="/private-library">Library</Link>
               </button>
               <button>
                 <Link to="/coaching">Coaching</Link>
@@ -95,7 +96,14 @@ function App() {
               path="/government-hostel"
               element={<GovernmentHostelComponent />}
             />
-            <Route path="/library" element={<LibraryComponent />} />
+            <Route
+              path="/private-library" 
+              element={<PrivateLibraryComponent />}
+            />
+             <Route
+              path="/government-library"
+              element={<GovernmentLibraryComponent />}
+            />
             <Route path="/coaching" element={<CoachingComponent />} />
             <Route path="/stationary" element={<StationaryComponent />} />
             <Route path="/scholarship" element={<ScholarshipComponent />} />

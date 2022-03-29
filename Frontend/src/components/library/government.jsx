@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react";
-import "./hostel.css";
+import "./library.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function GovernmentHostelComponent() {
-  const [hostels, setHostels] = useState("");
-  const url = "http://localhost:8081/hostel/government";
+function GovernmentLibraryComponent() {
+  const [libraries, setlibraries] = useState("");
+  const url = "http://localhost:8081/library/government";
 
   useEffect(() => {
     axios
       .get(url)
       .then((res) => {
-        setHostels(res.data);
-        console.log(hostels);
+        setlibraries(res.data);
+        console.log(libraries);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [setHostels]);
+  }, [setlibraries]);
 
   return (
-    <div className="container-hostel">
+    <div className="container-library">
       <div className="left">
         <div>
           <button type="button" className="btn btn-secondary">
-            <Link to="/private-hostel">Private Hostel</Link>
+            <Link to="/private-library">Private library</Link>
           </button>
           <button type="button" className="btn btn-secondary">
-            <Link to="/government-hostel">Government Hostel</Link>
+            <Link to="/government-library">Government library</Link>
           </button>
         </div>
       </div>
@@ -60,11 +60,11 @@ function GovernmentHostelComponent() {
             </div>
           </div>
         </div>
-        {hostels &&
-          hostels.map(({ id, name, address }) => (
+        {libraries &&
+          libraries.map(({ id, name, address }) => (
             <div className="libraryBox">
               <div className="library-info">
-                <div>{/* <img src={hostel1} /> */}</div>
+                <div>{/* <img src={library1} /> */}</div>
 
                 <div>
                   <h1>{name}</h1>
@@ -83,4 +83,4 @@ function GovernmentHostelComponent() {
   );
 }
 
-export default GovernmentHostelComponent;
+export default GovernmentLibraryComponent;
