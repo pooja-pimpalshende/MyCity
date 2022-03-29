@@ -5,6 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.mycity.springboot.repository.HostelRepository;
+import com.mycity.springboot.repository.LibraryRepository;
+import com.mycity.springboot.repository.GovernmentHostelRepository;
 
 @SpringBootApplication
 public class BackendApplication implements CommandLineRunner {
@@ -16,6 +18,12 @@ public class BackendApplication implements CommandLineRunner {
 
 	@Autowired
 	private HostelRepository hostelRepository;
+	
+	@Autowired
+	private GovernmentHostelRepository governmenthostelRepository;
+	
+	@Autowired
+	private LibraryRepository libraryRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {

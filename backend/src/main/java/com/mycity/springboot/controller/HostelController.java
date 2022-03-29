@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mycity.springboot.model.GovernmentHostel;
 import com.mycity.springboot.model.Hostel;
 import com.mycity.springboot.repository.HostelRepository;
+import com.mycity.springboot.service.GovernmentHostelService;
 import com.mycity.springboot.service.HostelService;
 
 @RestController
@@ -22,14 +24,26 @@ public class HostelController {
 	@Autowired
 	private HostelService hostelService;
 	
-	@PostMapping("/add")
-	public String add(@RequestBody Hostel hostel) {
-		hostelService.saveHostel(hostel);
-		return "New Hostel added";
+	@Autowired
+	private GovernmentHostelService governmenthostelService;
+	
+	@PostMapping("/private")
+	public Hostel add(@RequestBody Hostel hostel) {
+		return hostelService.saveHostel(hostel);	
 	}
 	
 	@GetMapping("/private")
 	public List<Hostel> getHostel(){
 		return hostelService.getAllHostel();
+	}
+	
+	@PostMapping("/government")
+	public GovernmentHostel add(@RequestBody GovernmentHostel hostel) {
+		return governmenthostelService.saveGovernmentHostel(hostel);
+	}
+	
+	@GetMapping("/government")
+	public List<GovernmentHostel> getGovernmentHostel(){
+		return governmenthostelService.getAllGovernmentHostel();
 	}
 }

@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./library.css";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-function LibraryComponent() {
+function PrivateLibraryComponent() {
+  const [libraries, setLibraries] = useState("");
+  const url = "http://localhost:8081/library/private";
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((res) => {
+        setLibraries(res.data);
+        console.log(libraries);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [setLibraries]);
+
   return (
     <div className="container-library">
       <div className="left">
         <div>
-          <button type="button" class="btn btn-secondary">
-            Public Library
+          <button type="button" className="btn btn-secondary">
+            <Link to="/private-library">Private Library</Link>
           </button>
-
-          <button type="button" class="btn btn-secondary">
-            Government Library
+          <button type="button" className="btn btn-secondary">
+            <Link to="/government-Library">Government Library</Link>
           </button>
         </div>
       </div>
@@ -21,9 +36,9 @@ function LibraryComponent() {
           <input text="text" id="search" placeholder="Search By Name" />
         </div>
         <div className="dropdown-style">
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               id="dropdownMenuButton"
               data-toggle="dropdown"
@@ -32,89 +47,40 @@ function LibraryComponent() {
             >
               Dropdown button
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" href="#">
                 Action
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Another action
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Something else here
               </a>
             </div>
           </div>
         </div>
+        {libraries &&
+          libraries.map(({ id, name, address }) => (
+            <div className="libraryBox">
+              <div className="library-info">
+                <div>{/* <img src={Library1} /> */}</div>
 
-        <div className="libraryBox">
-          <div className="library-info">
-            <div>
-              <img src="http://picsum.photos/450/150" />
+                <div>
+                  <h1>{name}</h1>
+                  <p>{address}</p>
+                </div>
+                <div>
+                  <button type="button" className="btn btn-success">
+                    Enquire Now
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button type="button" class="btn btn-success">
-                Enquire Now
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* <div className="libraryBox">
-          <div className="library-info">
-            <div>
-              <img src={library2} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="libraryBox">
-          <div className="library-info">
-            <div>
-              <img src={library3} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="libraryBox">
-          <div className="library-info">
-            <div>
-              <img src={library4} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
-            </div> */}
-        {/* </div> */}
-        {/* </div> */}
+          ))}
       </div>
     </div>
   );
 }
-export default LibraryComponent;
+
+export default PrivateLibraryComponent;
