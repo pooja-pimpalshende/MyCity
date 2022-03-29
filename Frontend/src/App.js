@@ -12,7 +12,6 @@ import LoginComponent from "./components/login/login";
 import SignUpComponent from "./components/signup/signup";
 import FormComponent from "./components/form/form";
 
-
 function App() {
   return (
     <div className="App fixed-top">
@@ -87,7 +86,7 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/" element={<HomeComponent />} />
+          // <Route path="/" element={<HomeComponent />} />
           <Route path="/college" element={<CollegeComponent />} />
           <Route path="/hostel" element={<HostelComponent />} />
           <Route path="/library" element={<LibraryComponent />} />
