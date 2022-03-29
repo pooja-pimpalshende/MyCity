@@ -1,22 +1,32 @@
-import React from "react"
-import "./coaching.css"
+import React from "react";
+import "./coaching.css";
 import coaching1 from "../../assets/images/coaching1.jpg";
 import coaching2 from "../../assets/images/coaching2.jpg";
 import coaching3 from "../../assets/images/coaching3.jpg";
 
-
 function CoachingComponent() {
-    return (
-      
-      <div className="container-coaching">
+  return (
+    <div className="container-coaching">
       <div className="left">
         <div>
-        <button type="button" class="btn btn-secondary">Engineering Coaching</button>
-        <button type="button" class="btn btn-secondary">Law Coaching</button>
-        <button type="button" class="btn btn-secondary">Art Coaching</button>
-        <button type="button" class="btn btn-secondary">MBA Coaching</button>
-        <button type="button" class="btn btn-secondary">Pharmacy Coaching</button>
-        <button type="button" class="btn btn-secondary">Government Coaching</button>
+          <button type="button" class="btn btn-secondary">
+            Engineering Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Law Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Art Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            MBA Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Pharmacy Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Government Coaching
+          </button>
         </div>
       </div>
       <div className="right">
@@ -48,27 +58,30 @@ function CoachingComponent() {
             </div>
           </div>
         </div>
-  
+
         <div className="libraryBox">
           <div className="library-info">
             <div>
-              <img src={coaching1} />
+              <img
+                src="http://picsum.photos/450/150
+"
+              />
             </div>
-  
+
             <div>
-              <h1>Coaching </h1>
+              <h1>heading </h1>
               <p>
                 <a href="">Click Here For More Info</a>
               </p>
             </div>
             <div>
               <button type="button" class="btn btn-success">
-              Enquire Now
+                Enquire Now
               </button>
             </div>
           </div>
         </div>
-          {/* <div className="coachingBox">
+        {/* <div className="coachingBox">
             <div className="coaching-info">
               <div>
                 <img src={coaching1} />
@@ -116,11 +129,9 @@ function CoachingComponent() {
               </div>
             </div>
     </div> */}
-        </div>
       </div>
-     
-      
-    );
-  }
+    </div>
+  );
+}
 
-  export default CoachingComponent
+export default CoachingComponent;

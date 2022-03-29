@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./hostel.css";
 import { Link } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 function PrivateHostelComponent() {
-
-  const [hostels, setHostels] = useState('');
-  const url = 'http://localhost:8081/hostel/private';
+  const [hostels, setHostels] = useState("");
+  const url = "http://localhost:8081/hostel/private";
 
   useEffect(() => {
-    axios.get(url)
-      .then(res => {
+    axios
+      .get(url)
+      .then((res) => {
         setHostels(res.data);
         console.log(hostels);
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }, [setHostels]);
 
   return (
@@ -60,19 +60,15 @@ function PrivateHostelComponent() {
             </div>
           </div>
         </div>
-        {
-          (hostels && hostels.map(({ id, name, address }) => (
+        {hostels &&
+          hostels.map(({ id, name, address }) => (
             <div className="libraryBox">
               <div className="library-info">
-                <div>
-                  {/* <img src={hostel1} /> */}
-                </div>
+                <div>{/* <img src={hostel1} /> */}</div>
 
                 <div>
                   <h1>{name}</h1>
-                  <p>
-                    {address}
-                  </p>
+                  <p>{address}</p>
                 </div>
                 <div>
                   <button type="button" className="btn btn-success">
@@ -81,8 +77,7 @@ function PrivateHostelComponent() {
                 </div>
               </div>
             </div>
-          )))
-        }
+          ))}
       </div>
     </div>
   );
