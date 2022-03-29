@@ -104,7 +104,7 @@ function App() {
           </Routes>
         </div>
 
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/college" element={<CollegeComponent />} />
           <Route path="/hostel" element={<HostelComponent />} />
@@ -115,7 +115,7 @@ function App() {
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/signup" element={<SignUpComponent />} />
           <Route path="/form" element={<FormComponent />} />
-        </Routes>
+        </Routes> */}
       </Router>
 
       {/* <Router>

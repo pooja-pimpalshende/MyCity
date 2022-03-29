@@ -1,8 +1,5 @@
 import React from "react";
 import "./hostel.css";
-import hostel from "../../assets/images/hostel1.jpg";
-import hostel1 from "../../assets/images/hostel2.jpg";
-import hostel2 from "../../assets/images/hostel3.jpg";
 import { Link } from "react-router-dom";
 
 function GovernmentHostelComponent() {
@@ -51,7 +48,7 @@ function GovernmentHostelComponent() {
       <div className="libraryBox">
         <div className="library-info">
           <div>
-            <img src={hostel1} />
+            {/* <img src={hostel1} /> */}
           </div>
 
           <div>
