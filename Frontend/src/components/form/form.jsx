@@ -56,7 +56,7 @@ function MyComponent() {
   };
 
   const addUser = async () => {
-    // const url = "http://localhost:9090/colleges";
+    // const url = "http://localhost:8081/colleges";
     const data = {
       college_name: college_name,
       phone_no: phone_no,
@@ -72,7 +72,7 @@ function MyComponent() {
     // AJAX using AXIOS
     const result1 = axios({
       method: "post",
-      url: "http://localhost:9090/colleges",
+      url: "http://localhost:8081/colleges",
       data: data,
       headers: { "Content-Type": undefined }, //this is very important to send the data make sure cors is enabled.
     })
@@ -100,7 +100,7 @@ function MyComponent() {
   };
 
   const getUser1 = async () => {
-    const url = "http://localhost:9090/colleges";
+    const url = "http://localhost:8081/colleges";
     const result = await axios.get(url);
 
     const list = result.data;
@@ -109,7 +109,7 @@ function MyComponent() {
   };
 
   const getUser = async () => {
-    const url = "http://localhost:9090/colleges";
+    const url = "http://localhost:8081/colleges";
     const result = axios.get(url).then(
       (response) => {
         console.log(response);

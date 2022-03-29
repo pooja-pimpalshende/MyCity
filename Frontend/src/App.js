@@ -101,6 +101,7 @@ function App() {
             <Route path="/scholarship" element={<ScholarshipComponent />} />
             <Route path="/login" element={<LoginComponent />} />
             <Route path="/signup" element={<SignUpComponent />} />
+            <Route path="/form" element={<FormComponent />}/>
           </Routes>
         </div>
 
@@ -114,7 +115,7 @@ function App() {
           <Route path="/scholarship" element={<ScholarshipComponent />} />
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/signup" element={<SignUpComponent />} />
-          <Route path="/form" element={<FormComponent />} />
+          } />
         </Routes> */}
       </Router>
 
