@@ -3,7 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomeComponent from "./components/home/home";
 import CollegeComponent from "./components/college/college";
-import HostelComponent from "./components/hostel/hostel";
+import PrivateHostelComponent from "./components/hostel/hostel";
+import GovernmentHostelComponent from "./components/hostel/government";
 import LibraryComponent from "./components/library/library";
 import CoachingComponent from "./components/coaching/coaching";
 import StationaryComponent from "./components/stationary/stationary";
@@ -64,7 +65,7 @@ function App() {
                 <Link to="/college">college</Link>
               </button>
               <button>
-                <Link to="/hostel">Hostel</Link>
+                <Link to="/private-hostel">Hostel</Link>
               </button>
               <button>
                 <Link to="/library">Library</Link>
@@ -83,6 +84,24 @@ function App() {
               </button>
             </div>
           </div>
+          <Routes>
+            <Route path="/" element={<HomeComponent />} />
+            <Route path="/college" element={<CollegeComponent />} />
+            <Route
+              path="/private-hostel"
+              element={<PrivateHostelComponent />}
+            />
+            <Route
+              path="/government-hostel"
+              element={<GovernmentHostelComponent />}
+            />
+            <Route path="/library" element={<LibraryComponent />} />
+            <Route path="/coaching" element={<CoachingComponent />} />
+            <Route path="/stationary" element={<StationaryComponent />} />
+            <Route path="/scholarship" element={<ScholarshipComponent />} />
+            <Route path="/login" element={<LoginComponent />} />
+            <Route path="/signup" element={<SignUpComponent />} />
+          </Routes>
         </div>
 
         <Routes>

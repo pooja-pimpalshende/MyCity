@@ -1,17 +1,31 @@
 import React from "react";
 import "./coaching.css";
+import coaching1 from "../../assets/images/coaching1.jpg";
+import coaching2 from "../../assets/images/coaching2.jpg";
+import coaching3 from "../../assets/images/coaching3.jpg";
 
 function CoachingComponent() {
   return (
-    <div className="container-hostel">
+    <div className="container-coaching">
       <div className="left">
         <div>
           <button type="button" class="btn btn-secondary">
-            coaching1{" "}
+            Engineering Coaching
           </button>
-
           <button type="button" class="btn btn-secondary">
-            coaching2{" "}
+            Law Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Art Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            MBA Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Pharmacy Coaching
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Government Coaching
           </button>
         </div>
       </div>
@@ -67,55 +81,54 @@ function CoachingComponent() {
             </div>
           </div>
         </div>
-        <div></div>
-        {/* <div className="hostelBox">
-          <div className="hostel-info">
-            <div>
-              <img src={hostel1} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="hostelBox">
-          <div className="hostel-info">
-            <div>
-              <img src={hostel2} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
+        {/* <div className="coachingBox">
+            <div className="coaching-info">
+              <div>
+                <img src={coaching1} />
+              </div>
+              <div>
+                <h1>heading </h1>
+                <p>
+                  <a href="">Click Here For More Info</a>
+                </p>
+              </div>
+              <div>
+                <button>Enquire Now</button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="hostelBox">
-          <div className="hostel-info">
-            <div>
-              <img src={hostel} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
+          <div className="coachingBox">
+            <div className="coaching-info">
+              <div>
+                <img src={coaching2} />
+              </div>
+              <div>
+                <h1>heading </h1>
+                <p>
+                  <a href="">Click Here For More Info</a>
+                </p>
+              </div>
+              <div>
+                <button>Enquire Now</button>
+              </div>
             </div>
           </div>
-        </div> */}
+          <div className="coachingBox">
+            <div className="coaching-info">
+              <div>
+                <img src={coaching3} />
+              </div>
+              <div>
+                <h1>heading </h1>
+                <p>
+                  <a href="">Click Here For More Info</a>
+                </p>
+              </div>
+              <div>
+                <button>Enquire Now</button>
+              </div>
+            </div>
+    </div> */}
       </div>
     </div>
   );

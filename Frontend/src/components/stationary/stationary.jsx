@@ -1,17 +1,28 @@
 import React from "react";
 import "./stationary.css";
+import stationary1 from "../../assets/images/stationary1.jpeg";
+import stationary2 from "../../assets/images/stationary2.jpg";
+import stationary3 from "../../assets/images/stationary3.jpg";
 
 function StationaryComponent() {
   return (
-    <div className="container-hostel">
+    <div className="container-stationary">
       <div className="left">
         <div>
           <button type="button" class="btn btn-secondary">
-            stationary1
+            Engineering Students
           </button>
-
           <button type="button" class="btn btn-secondary">
-            stationary2{" "}
+            Law Students
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Art Students
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Medical Students
+          </button>
+          <button type="button" class="btn btn-secondary">
+            Commerce Students
           </button>
         </div>
       </div>
@@ -48,14 +59,11 @@ function StationaryComponent() {
         <div className="libraryBox">
           <div className="library-info">
             <div>
-              <img
-                src="http://picsum.photos/450/150
-"
-              />
+              <img src={stationary1} />
             </div>
 
             <div>
-              <h1>heading </h1>
+              <h1>Stationary Items</h1>
               <p>
                 <a href="">Click Here For More Info</a>
               </p>
@@ -67,57 +75,56 @@ function StationaryComponent() {
             </div>
           </div>
         </div>
-        {/* <div className="hostelBox">
-          <div className="hostel-info">
-            <div>
-              <img src={hostel1} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="hostelBox">
-          <div className="hostel-info">
-            <div>
-              <img src={hostel2} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
+        {/* <div className="stationaryBox">
+            <div className="stationary-info">
+              <div>
+                <img src={stationary1} />
+              </div>
+              <div>
+                <h1>heading </h1>
+                <p>
+                  <a href="">Click Here For More Info</a>
+                </p>
+              </div>
+              <div>
+                <button>Enquire Now</button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="hostelBox">
-          <div className="hostel-info">
-            <div>
-              <img src={hostel} />
-            </div>
-            <div>
-              <h1>heading </h1>
-              <p>
-                <a href="">Click Here For More Info</a>
-              </p>
-            </div>
-            <div>
-              <button>Enquire Now</button>
+          <div className="stationaryBox">
+            <div className="stationary-info">
+              <div>
+                <img src={stationary2} />
+              </div>
+              <div>
+                <h1>heading </h1>
+                <p>
+                  <a href="">Click Here For More Info</a>
+                </p>
+              </div>
+              <div>
+                <button>Enquire Now</button>
+              </div>
             </div>
           </div>
-        </div> */}
+          <div className="stationaryBox">
+            <div className="stationary-info">
+              <div>
+                <img src={stationary3} />
+              </div>
+              <div>
+                <h1>heading </h1>
+                <p>
+                  <a href="">Click Here For More Info</a>
+                </p>
+              </div>
+              <div>
+                <button>Enquire Now</button>
+              </div>
+            </div>
+    </div> */}
       </div>
     </div>
   );
 }
-
 export default StationaryComponent;
