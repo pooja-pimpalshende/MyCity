@@ -5,11 +5,12 @@ import axios from "axios";
 
 function PrivateLibraryComponent() {
   const [libraries, setLibraries] = useState("");
-  const url = "http://localhost:8081/library/private";
+  const baseUrl = "http://localhost:8081";
+  const apiUrl = baseUrl + "/library/private";
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(apiUrl)
       .then((res) => {
         setLibraries(res.data);
         console.log(libraries);
@@ -32,7 +33,7 @@ function PrivateLibraryComponent() {
         </div>
       </div>
       <div className="right">
-        <div className="searchBy">
+        {/* <div className="searchBy">
           <input text="text" id="search" placeholder="Search By Name" />
         </div>
         <div className="dropdown-style">
@@ -59,16 +60,17 @@ function PrivateLibraryComponent() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
         {libraries &&
-          libraries.map(({ id, name, address }) => (
+          libraries.map(({ id, name, address, phone, photosImagePath }) => (
             <div className="libraryBox">
               <div className="library-info">
-                <div>{/* <img src={Library1} /> */}</div>
+                <div><img src={baseUrl + photosImagePath} /></div>
 
                 <div>
                   <h1>{name}</h1>
-                  <p>{address}</p>
+                  <h5>Address: {address}</h5>
+                  <h5>Phone: {phone}</h5>
                 </div>
                 <div>
                   <button type="button" className="btn btn-success">
