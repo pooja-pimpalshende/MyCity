@@ -5,11 +5,12 @@ import axios from "axios";
 
 function GovernmentHostelComponent() {
   const [hostels, setHostels] = useState("");
-  const url = "http://localhost:8081/hostel/government";
+  const baseUrl = "http://localhost:8081";
+  const apiUrl = baseUrl + "/hostel/government";
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(apiUrl)
       .then((res) => {
         setHostels(res.data);
         console.log(hostels);
@@ -32,7 +33,7 @@ function GovernmentHostelComponent() {
         </div>
       </div>
       <div className="right">
-        <div className="searchBy">
+        {/* <div className="searchBy">
           <input text="text" id="search" placeholder="Search By Name" />
         </div>
         <div className="dropdown-style">
@@ -59,16 +60,17 @@ function GovernmentHostelComponent() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
         {hostels &&
-          hostels.map(({ id, name, address }) => (
-            <div className="libraryBox">
-              <div className="library-info">
-                <div>{/* <img src={hostel1} /> */}</div>
+          hostels.map(({ id, name, address, phone, photosImagePath }) => (
+            <div className="hostelBox">
+              <div className="hostel-info">
+                <div><img src={baseUrl + photosImagePath} /></div>
 
                 <div>
                   <h1>{name}</h1>
-                  <p>{address}</p>
+                  <h5>Address: {address}</h5>
+                  <h5>Phone: {phone}</h5>
                 </div>
                 <div>
                   <button type="button" className="btn btn-success">
