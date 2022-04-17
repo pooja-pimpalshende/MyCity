@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./hostel.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal'
 
 function PrivateHostelComponent() {
   const [hostels, setHostels] = useState("");
   const baseUrl = "http://localhost:8081";
   const apiUrl = baseUrl + '/hostel/private';
+  const [modalShow, setModalShow] = React.useState(false);
 
   useEffect(() => {
     axios
@@ -33,36 +36,8 @@ function PrivateHostelComponent() {
         </div>
       </div>
       <div className="right">
-        {/* <div className="searchBy">
-          <input text="text" id="search" placeholder="Search By Name" />
-        </div> */}
-        {/* <div className="dropdown-style">
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown button
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </div>
-        </div> */}
         {hostels &&
-          hostels.map(({ id, name, address, phone, photosImagePath }) => (
+          hostels.map(({ id, name, address, email, phone, photosImagePath }) => (
             <div className="hostelBox">
               <div className="hostel-info">
                 <div><img src={baseUrl + photosImagePath} /></div>
@@ -70,13 +45,19 @@ function PrivateHostelComponent() {
                 <div>
                   <h1>{name}</h1>
                   <h5>Address: {address}</h5>
+                  <h5>Email: {email}</h5>
                   <h5>Phone: {phone}</h5>
                 </div>
-                <div>
-                  <button type="button" className="btn btn-success">
-                    Enquire Now
-                  </button>
-                </div>
+                {/* <div>
+                  <Button variant="primary"className="btn btn-success" onClick={() => setModalShow(true)}>
+                      Enquire Now
+                  </Button>
+
+                  <MyVerticallyCenteredModal phone={phone} name={name}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                </div> */}
               </div>
             </div>
           ))}
@@ -84,5 +65,27 @@ function PrivateHostelComponent() {
     </div>
   );
 }
+
+// function MyVerticallyCenteredModal(props) {
+//   return (
+   
+//     <Modal
+//       {...props}
+//       size="lg"
+//       aria-labelledby="contained-modal-title-vcenter"
+//       centered
+//     >
+//        <Modal.Header closeButton>
+//        <Modal.Body>
+//          <h3>{props.name}</h3>
+//          <h3>{props.phone}</h3>
+//        </Modal.Body>
+//       </Modal.Header>
+//       <Modal.Footer>
+//         <Button onClick={props.onHide}>Close</Button>
+//       </Modal.Footer>
+//     </Modal>
+//   );
+// }
 
 export default PrivateHostelComponent;

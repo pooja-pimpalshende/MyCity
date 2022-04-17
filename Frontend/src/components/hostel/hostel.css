@@ -36,10 +36,15 @@ img{
 .left{
 
     border: 2px solid black;
-    height: 500px;
+    height: 970px;
     width: 300px;
     margin: 5px;
   
+}
+
+.btn-secondary a {
+    color: #f9fafb;
+    text-decoration: none;
 }
 
 #search{

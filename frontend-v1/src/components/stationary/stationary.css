@@ -1,0 +1,80 @@
+#image{
+    object-fit: cover;
+    width: 350px;
+    height: 200px;
+}
+#row{
+    height: 100px;
+}
+
+#mycity{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-stationary{
+    display: flex;
+
+}
+
+.stationaryBox{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    width: 1000px;
+    height: 300px;
+    
+}
+
+.libraryBox{
+    height: 320px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.stationary-info{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    height: 300px;
+    width: 400px;
+}
+ 
+.dropdown-style{
+    display: flex;
+    justify-content: right;
+}
+
+.left{
+
+    border: 2px solid black;
+    height: 500px;
+    width: 300px;
+    margin: 5px;
+  
+}
+
+#search{
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.searchBy{
+    display: flex;
+    justify-content: left;
+}
+
+.btn {
+    padding: 5px;
+    margin: 5px;
+    width: 200px;
+}

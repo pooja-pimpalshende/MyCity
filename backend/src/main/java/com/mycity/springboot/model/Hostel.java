@@ -25,6 +25,9 @@ public class Hostel {
 	@Column(name="phone")
 	private long phone;
 	
+	@Column(name="email")
+	private String email;
+	
 	@Column(nullable = true , length = 64)
 	private String photos;
 	
@@ -55,6 +58,14 @@ public class Hostel {
 	}
 	public void setPhone(long phone) {
 		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPhotos() {

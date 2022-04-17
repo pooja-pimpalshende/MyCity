@@ -25,6 +25,9 @@ public class Library {
 	@Column(name="phone")
 	private long phone;
 	
+	@Column(name="email")
+	private String email;
+	
 	@Column(nullable = true , length = 64)
 	private String photos;
 	
@@ -56,6 +59,15 @@ public class Library {
 		this.address = address;
 	}
 	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public long getPhone() {
 		return phone;
 	}

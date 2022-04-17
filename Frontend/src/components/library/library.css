@@ -12,6 +12,12 @@
     
 }
 
+.btn-secondary a {
+    color: #f9fafb;
+    text-decoration: none;
+}
+
+
 .right{
     display: flex;
     flex-direction: column;
@@ -37,7 +43,7 @@ img{
 .left{
 
     border: 2px solid black;
-    height: 500px;
+    height: 979px;
     width: 300px;
     margin: 5px;
   

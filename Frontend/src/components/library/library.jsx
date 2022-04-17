@@ -62,7 +62,7 @@ function PrivateLibraryComponent() {
           </div>
         </div> */}
         {libraries &&
-          libraries.map(({ id, name, address, phone, photosImagePath }) => (
+          libraries.map(({ id, name, address, email, phone, photosImagePath }) => (
             <div className="libraryBox">
               <div className="library-info">
                 <div><img src={baseUrl + photosImagePath} /></div>
@@ -70,13 +70,14 @@ function PrivateLibraryComponent() {
                 <div>
                   <h1>{name}</h1>
                   <h5>Address: {address}</h5>
+                  <h5>Email: {email}</h5>
                   <h5>Phone: {phone}</h5>
                 </div>
-                <div>
+                {/* <div>
                   <button type="button" className="btn btn-success">
                     Enquire Now
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

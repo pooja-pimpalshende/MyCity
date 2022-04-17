@@ -1,23 +1,22 @@
 package com.mycity.springboot;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.mycity.springboot.repository.HostelRepository;
-import com.mycity.springboot.repository.LibraryRepository;
-import com.mycity.springboot.repository.GovernmentHostelRepository;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import com.mycity.springboot.repository.GovernmentHostelRepository;
+import com.mycity.springboot.repository.HostelRepository;
+import com.mycity.springboot.repository.LibraryRepository;
 
 @SpringBootApplication
 public class BackendApplication implements WebMvcConfigurer {
 
-	//CommandLineRunner provides run method
+	
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}

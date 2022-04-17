@@ -22,6 +22,9 @@ public class GovernmentLibrary {
 	@Column(name="address")
 	private String address;
 	
+	@Column(name="email")
+	private String email;
+	
 	@Column(name="phone")
 	private long phone;
 	
@@ -56,6 +59,15 @@ public class GovernmentLibrary {
 		this.address = address;
 	}
 	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public long getPhone() {
 		return phone;
 	}
